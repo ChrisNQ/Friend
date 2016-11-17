@@ -1,0 +1,31 @@
+<style>
+table {
+  border: 1px solid black;
+}
+
+table td {
+  border: 1px solid black;
+}
+</style>
+
+<h1>My Friends</h1>
+<a href="#/new"><button>New Friend</button></a>
+
+<div ng-controller="friendController"><br>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Show</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in list">
+        <td>{{user.fName}} {{user.lName}}</td>
+        <td><a href="#/show/{{user._id}}">show</a></td>
+        <td><a href="#/edit/{{user._id}}">edit</td>
+        <td><button ng-click="deleteUser(user)">delete</td>
+  </table>
+</div>
